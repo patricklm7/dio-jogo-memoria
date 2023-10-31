@@ -56,4 +56,24 @@ const emojis = [
    {alert("Você venceu!")}
 
   }
+
+
+const timeLeft= document.querySelector("#time")
+
+const score ={
+  countDown: 120,
+  countInterval: setInterval(countTime, 1000),
+}
+
+
   
+function countTime (){
+    score.countDown --;
+    timeLeft.textContent = "tempo restante:" + score.countDown + "seg";
+    if (score.countDown <= 0) {
+      clearInterval(score.countInterval)
+      clearInterval(score.countDown)
+      alert("o seu tempo acabou");
+    }
+
+}
